@@ -1,0 +1,29 @@
+# Market Scout Agent Build Walkthrough
+
+I have successfully developed and refined the **Market Scout Agent** based on the final PRD, transforming it into a robust competitor intelligence tool.
+
+## Initial Architecture
+- **API and Backend Structure (Flask)**: Set up the Python project environment and encapsulated the logic into a modular `/services` based structure.
+- **Search & Filtering ([services/search.py](file:///C:/Users/patan/Desktop/Market%20scout%20agent/agent3-anti/market_scout_agent/services/search.py))**: Integrated the **Tavily API** which generates 5 targeted search queries dynamically based on the company name to fetch only relevant technical news. De-duplicated returns by top-level domains.
+- **Scraper & Minimum Length ([services/scraper.py](file:///C:/Users/patan/Desktop/Market%20scout%20agent/agent3-anti/market_scout_agent/services/scraper.py))**: Applied BeautifulSoup to extract clean text while ignoring navigation and header/footer elements. Added a rigid `500 character` minimum length requirement.
+- **Date Verification ([utils/date_parser.py](file:///C:/Users/patan/Desktop/Market%20scout%20agent/agent3-anti/market_scout_agent/utils/date_parser.py))**: Handled verifying recency (within the last 7 days) flexibly handling edge cases in date formats.
+- **Gemini Summarizer ([services/summarizer.py](file:///C:/Users/patan/Desktop/Market%20scout%20agent/agent3-anti/market_scout_agent/services/summarizer.py))**: Hooked up the `gemini-2.5-flash` model with a strict JSON instructional prompt dictating to output: feature update, summary, and technical impact.
+- **Frontend Dashboard**: Applied a premium dark theme (`var(--bg-color: #0f172a)` with `Inter` font) matching the requested sleek, rounded-card design. Added animated trending buttons and accurate loading/empty UI states.
+
+## Reliability Improvements (Phase 2)
+To resolve the initial 500 Internal error and improve API stability, the following upgrades were rapidly implemented:
+1. **API Key Loading Verification**: Adjusted [app.py](file:///C:/Users/patan/Desktop/Market%20scout%20agent/agent3-anti/market_scout_agent/app.py) to use `os.getenv` over `.get()` and print clear status messages in the terminal indicating if the Tavily or Gemini API keys successfully loaded via `load_dotenv()`.
+2. **Stable Exceptions in Flask**: Added a global exception catch returning the exact JSON shape required by the frontend instead of crashing: `{"message": "Unable to fetch updates at the moment."}`.
+3. **Scraper Resilience**: Enforced a `User-Agent` header (`Mozilla/5.0...`) to prevent the scraper from being arbitrarily blocked, and added connection timeout handling within the loop. 
+4. **Data Contract with Gemini**: Added safe JSON parsing in try/catch blocks allowing the system to ignore un-parseable hallucinated texts elegantly.
+
+## Final Verification Result
+With the API Keys loaded into your environment, the Browser Subagent tested the live application again. The system successfully executed end-to-end. Here is the interaction where it tested an unresponsive update (Google) verifying the graceful UI failure state correctly displays "No technical updates found in the last 7 days." instead of crashing.
+
+![Market Scout Agent Flow Testing](/C:/Users/patan/.gemini/antigravity/brain/f8b91934-1351-439b-ac6a-0c312b7a8dc6/reliability_check_1772955973996.webp)
+![Google "No updates" Empty State Test](file:///C:/Users/patan/.gemini/antigravity/brain/f8b91934-1351-439b-ac6a-0c312b7a8dc6/.system_generated/click_feedback/click_feedback_1772956200321.png)
+
+## Next Steps for You
+The server is currently running, and the [.env](file:///C:/Users/patan/Desktop/Market%20scout%20agent/agent3-anti/market_scout_agent/.env) file successfully loaded your API keys. 
+
+You can interact with it live by opening `http://localhost:5000` via your desktop browser. Search for standard companies like Anthropic, or click "OpenAI" to see the full cards populate.

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Scout Agent</title>
+    <!-- Google Font "Inter" -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Market Scout Agent</h1>
+            <p class="subtitle">AI-powered competitor update monitor</p>
+        </header>
+
+        <main>
+            <section class="search-section">
+                <form id="search-form" class="search-box">
+                    <input type="text" id="company-input" placeholder="Enter a company name (e.g., Anthropic)" required autocomplete="off">
+                    <button type="submit" id="search-btn">
+                        <span>Search</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </button>
+                </form>
+
+                <div class="trending-section">
+                    <span>Trending:</span>
+                    <button class="trending-btn" data-company="OpenAI">OpenAI</button>
+                    <button class="trending-btn" data-company="NVIDIA">NVIDIA</button>
+                    <button class="trending-btn" data-company="Apple">Apple</button>
+                    <button class="trending-btn" data-company="Meta">Meta</button>
+                    <button class="trending-btn" data-company="Google">Google</button>
+                </div>
+            </section>
+
+            <section class="results-section">
+                <div id="loading-spinner" class="spinner-container hidden">
+                    <div class="spinner"></div>
+                    <p>Scanning the web for recent updates...</p>
+                </div>
+
+                <div id="error-message" class="message-box hidden error"></div>
+                <div id="empty-message" class="message-box hidden empty"></div>
+
+                <div id="results-container" class="cards-grid">
+                    <!-- Update Cards will be injected here via JS -->
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p>Market Scout Agent &ndash; AI-powered competitor update monitor</p>
+                <div class="footer-meta">
+                    <span class="badge">Data sources: Tavily Search + Web Articles</span>
+                    <span class="badge ai">Summaries generated using Google Gemini AI</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
