@@ -1,0 +1,26 @@
+=== DEBUG START ===
+DEBUG: Tavily searching for: Anthropic new product feature release
+DEBUG: Tavily found 3 results for query: Anthropic new product feature release
+DEBUG: Checking domain www.theverge.com from url https://www.theverge.com/ai-artificial-intelligence/874440/anthropic-opus-4-6-new-model-claude
+DEBUG: Checking domain www.ndtv.com from url https://www.ndtv.com/offbeat/anthropics-claude-unveils-new-business-plugins-sparks-social-media-frenzy-absolute-cinema-11133212
+DEBUG: Checking domain www.businesstimes.com.sg from url https://www.businesstimes.com.sg/startups-tech/startups/anthropic-touts-new-ai-tools-weeks-after-legal-plug-spurred-market-rout
+DEBUG: Tavily searching for: Anthropic AI model launch
+DEBUG: Tavily found 3 results for query: Anthropic AI model launch
+DEBUG: Checking domain www.cnbc.com from url https://www.cnbc.com/2026/02/05/anthropic-claude-opus-4-6-vibe-working.html
+DEBUG: Checking domain gizmodo.com from url https://gizmodo.com/anthropic-launches-new-model-that-spots-zero-days-makes-wall-street-traders-lose-their-minds-2000718648
+=== URLs found: ['https://www.theverge.com/ai-artificial-intelligence/874440/anthropic-opus-4-6-new-model-claude', 'https://www.ndtv.com/offbeat/anthropics-claude-unveils-new-business-plugins-sparks-social-media-frenzy-absolute-cinema-11133212', 'https://www.businesstimes.com.sg/startups-tech/startups/anthropic-touts-new-ai-tools-weeks-after-legal-plug-spurred-market-rout', 'https://www.cnbc.com/2026/02/05/anthropic-claude-opus-4-6-vibe-working.html', 'https://gizmodo.com/anthropic-launches-new-model-that-spots-zero-days-makes-wall-street-traders-lose-their-minds-2000718648'] ===
+DEBUG: Successfully scraped 5582 chars from https://www.theverge.com/ai-artificial-intelligence/874440/anthropic-opus-4-6-new-model-claude
+Error summarizing https://www.theverge.com/ai-artificial-intelligence/874440/anthropic-opus-4-6-new-model-claude with API: 403 PERMISSION_DENIED. {'error': {'code': 403, 'message': 'Your API key was reported as leaked. Please use another API key.', 'status': 'PERMISSION_DENIED'}}
+=== Summary: None ===
+Request error scraping https://www.ndtv.com/offbeat/anthropics-claude-unveils-new-business-plugins-sparks-social-media-frenzy-absolute-cinema-11133212: 403 Client Error: Forbidden for url: https://www.ndtv.com/offbeat/anthropics-claude-unveils-new-business-plugins-sparks-social-media-frenzy-absolute-cinema-11133212
+=== Scrape failed for https://www.ndtv.com/offbeat/anthropics-claude-unveils-new-business-plugins-sparks-social-media-frenzy-absolute-cinema-11133212 ===
+DEBUG: Successfully scraped 6923 chars from https://www.businesstimes.com.sg/startups-tech/startups/anthropic-touts-new-ai-tools-weeks-after-legal-plug-spurred-market-rout
+Error summarizing https://www.businesstimes.com.sg/startups-tech/startups/anthropic-touts-new-ai-tools-weeks-after-legal-plug-spurred-market-rout with API: 403 PERMISSION_DENIED. {'error': {'code': 403, 'message': 'Your API key was reported as leaked. Please use another API key.', 'status': 'PERMISSION_DENIED'}}
+=== Summary: None ===
+DEBUG: Successfully scraped 4043 chars from https://www.cnbc.com/2026/02/05/anthropic-claude-opus-4-6-vibe-working.html
+Error summarizing https://www.cnbc.com/2026/02/05/anthropic-claude-opus-4-6-vibe-working.html with API: 403 PERMISSION_DENIED. {'error': {'code': 403, 'message': 'Your API key was reported as leaked. Please use another API key.', 'status': 'PERMISSION_DENIED'}}
+=== Summary: None ===
+DEBUG: Successfully scraped 5717 chars from https://gizmodo.com/anthropic-launches-new-model-that-spots-zero-days-makes-wall-street-traders-lose-their-minds-2000718648
+Error summarizing https://gizmodo.com/anthropic-launches-new-model-that-spots-zero-days-makes-wall-street-traders-lose-their-minds-2000718648 with API: 403 PERMISSION_DENIED. {'error': {'code': 403, 'message': 'Your API key was reported as leaked. Please use another API key.', 'status': 'PERMISSION_DENIED'}}
+=== Summary: None ===
+=== FINAL VALID UPDATES: 0 ===

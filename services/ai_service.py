@@ -19,7 +19,7 @@ Summarize the article as a technical product update.
 
 Return JSON format strictly:
 {{
-  "feature_update": "Short title of feature release",
+  "title": "Short title of feature release",
   "summary": "2-3 sentence explanation of the feature",
   "technical_impact": "Why the update matters technically",
   "date": "Publication date in YYYY-MM-DD or standard format"
@@ -42,6 +42,7 @@ Article Text:
         )
         
         response_text = response.text.strip()
+        print(f"DEBUG: Gemini raw response for {source_url}:\n{response_text}")
         
         # Clean markdown codeblock formatting if Gemini includes it
         if response_text.startswith("```json"):
@@ -52,10 +53,12 @@ Article Text:
         data = json.loads(response_text)
         
         # Validation checks
-        if "error" in data or not data.get("feature_update"):
+        if "error" in data or not data.get("title"):
+            print(f"DEBUG: Gemini returns error or missing title: {data}")
             return None
             
-        if str(data.get("feature_update")).lower() == "null":
+        if str(data.get("title")).lower() == "null":
+            print(f"DEBUG: Gemini title is null: {data}")
             return None
             
         # Add the source link manually
@@ -63,8 +66,19 @@ Article Text:
         return data
         
     except json.JSONDecodeError as e:
-        print(f"Failed to parse JSON from Gemini for {source_url}: {e}")
-        return None
+        print(f"DEBUG: Failed to parse JSON from Gemini for {source_url}: {e}")
     except Exception as e:
-        print(f"Error summarizing {source_url} with API: {e}")
-        return None
+        print(f"DEBUG: Error summarizing {source_url} with API: {e}")
+        
+    # FALLBACK if API fails
+    print(f"DEBUG: Using fallback summarizer for {source_url}")
+    import re
+    sentences = re.split(r'(?<=[.!?]) +', text.replace('\n', ' '))
+    fallback_summary = " ".join(sentences[:3]) if sentences else text[:300]
+    return {
+        "title": f"{company_name} Update",
+        "summary": fallback_summary[:300] + "...",
+        "technical_impact": "Could not determine technical impact due to AI service error.",
+        "date": None,
+        "source": source_url
+    }

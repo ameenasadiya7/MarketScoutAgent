@@ -30,9 +30,10 @@ def scrape_article(url, min_length=500):
         
         # Enforce minimum article length requirement
         if len(text) < min_length:
-            print(f"Article at {url} is too short ({len(text)} chars). Minimum {min_length} required. Ignored.")
+            print(f"DEBUG: Article at {url} is too short ({len(text)} chars). Minimum {min_length} required. Ignored.")
             return None
             
+        print(f"DEBUG: Successfully scraped {len(text)} chars from {url}")
         return text
     except requests.exceptions.Timeout:
         print(f"Timeout while scraping {url}")

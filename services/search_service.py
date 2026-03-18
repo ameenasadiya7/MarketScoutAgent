@@ -31,9 +31,11 @@ def search_company_updates(company_name):
     # To reduce API calls and time, we stop once we find 5 unique URLs
     for query in queries:
         try:
+            print(f"DEBUG: Tavily searching for: {query}")
             # We use search_depth="basic" for speed.
             response = tavily.search(query=query, search_depth="basic", max_results=3, include_raw_content=False)
             results = response.get("results", [])
+            print(f"DEBUG: Tavily found {len(results)} results for query: {query}")
             
             for result in results:
                 url = result.get("url")
@@ -41,6 +43,7 @@ def search_company_updates(company_name):
                     continue
                 
                 domain = urlparse(url).netloc
+                print(f"DEBUG: Checking domain {domain} from url {url}")
                 # Simple exclusion of generic sites, though Tavily acts as a search engine
                 if domain and domain not in unique_domains:
                     unique_domains.add(domain)
