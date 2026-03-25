@@ -1,0 +1,155 @@
+{
+  "total_rows": 10,
+  "debug": [
+    {
+      "company": "Stripe",
+      "updates_type": "list",
+      "updates_count": 1,
+      "significances": [
+        "High"
+      ],
+      "categories": [
+        "Market Expansion"
+      ],
+      "created_at": "2026-03-24T09:41:01.676963+00:00"
+    },
+    {
+      "company": "OpenAI",
+      "updates_type": "list",
+      "updates_count": 5,
+      "significances": [
+        "High",
+        "High",
+        "Medium",
+        "Medium",
+        "High"
+      ],
+      "categories": [
+        "Market Expansion",
+        "Market Expansion",
+        "Other",
+        "Tech Release",
+        "Market Expansion"
+      ],
+      "created_at": "2026-03-24T09:40:08.652078+00:00"
+    },
+    {
+      "company": "Anthropic",
+      "updates_type": "list",
+      "updates_count": 5,
+      "significances": [
+        "High",
+        "High",
+        "High",
+        "High",
+        "High"
+      ],
+      "categories": [
+        "Regulatory",
+        "Regulatory",
+        "Market Expansion",
+        "Regulatory",
+        "Market Expansion"
+      ],
+      "created_at": "2026-03-24T09:18:59.868988+00:00"
+    },
+    {
+      "company": "IBM",
+      "updates_type": "list",
+      "updates_count": 3,
+      "significances": [
+        "High",
+        "High",
+        "Medium"
+      ],
+      "categories": [
+        "Product Launch",
+        "Tech Release",
+        "Partnership"
+      ],
+      "created_at": "2026-03-24T09:07:19.448819+00:00"
+    },
+    {
+      "company": "IBM",
+      "updates_type": "list",
+      "updates_count": 4,
+      "significances": [
+        "High",
+        "High",
+        "Medium",
+        "Low"
+      ],
+      "categories": [
+        "Acquisition",
+        "Tech Release",
+        "Partnership",
+        "Partnership"
+      ],
+      "created_at": "2026-03-24T09:04:13.338469+00:00"
+    },
+    {
+      "company": "Accenture",
+      "updates_type": "list",
+      "updates_count": 3,
+      "significances": [
+        "High",
+        "Medium",
+        "High"
+      ],
+      "categories": [
+        "Market Expansion",
+        "Other",
+        "Market Expansion"
+      ],
+      "created_at": "2026-03-24T08:40:45.246222+00:00"
+    },
+    {
+      "company": "Meta",
+      "updates_type": "list",
+      "updates_count": 5,
+      "significances": [
+        "High",
+        "High",
+        "High",
+        "High",
+        "Medium"
+      ],
+      "categories": [
+        "Tech Release",
+        "Product Launch",
+        "Market Expansion",
+        "Tech Release",
+        "Leadership"
+      ],
+      "created_at": "2026-03-24T07:36:29.13951+00:00"
+    },
+    {
+      "company": "Anthropic",
+      "updates_type": "list",
+      "updates_count": 1,
+      "significances": [
+        "High"
+      ],
+      "categories": [
+        "Market Expansion"
+      ],
+      "created_at": "2026-03-24T07:35:45.856527+00:00"
+    },
+    {
+      "company": "stripe",
+      "updates_type": "list",
+      "updates_count": 0,
+      "significances": [],
+      "categories": [],
+      "created_at": "2026-03-24T07:34:54.365693+00:00"
+    },
+    {
+      "company": "TestingSupabaseFinal",
+      "updates_type": "list",
+      "updates_count": 0,
+      "significances": [],
+      "categories": [],
+      "created_at": "2026-03-24T07:32:32.750817+00:00"
+    }
+  ]
+}

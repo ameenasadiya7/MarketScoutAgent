@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-secondary font-sans antialiased;
+  }
+}
+
+@layer components {
+  .card-gradient {
+    background: linear-gradient(145deg, #ffffff 0%, #f1f5f9 100%);
+    @apply shadow-sm border border-slate-200 rounded-xl;
+  }
+  
+  .glass-panel {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-sm rounded-2xl;
+  }
+
+  .banner {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    font-size: 14px;
+  }
+  .banner-warning {
+    background: #FFF8E1;
+    border-left: 4px solid #F59E0B;
+    color: #92400E;
+  }
+
+  @keyframes slide-in-right {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .animate-in {
+    animation-duration: 300ms;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    animation-fill-mode: forwards;
+  }
+
+  .slide-in-from-right {
+    animation-name: slide-in-right;
+  }
+
+  .fade-in {
+    animation-name: fade-in;
+  }
+}
